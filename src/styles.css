@@ -4,3 +4,6 @@ body{
   background: -webkit-linear-gradient(to right, #1565C0, #b92b27);
   background: linear-gradient(to right, #1565C0, #b92b27);
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
