@@ -7,6 +7,42 @@
           <span class="input-group-text">Name</span>
           <input type="text" class="form-control" placeholder="Ej: Lorenzo">
         </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Cabin</span>
+          <input type="number" class="form-control" placeholder="Ej: 1234">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Date</span>
+          <input type="datetime" class="form-control">
+          <span class="input-group-text">Hour</span>
+          <input type="datetime" class="form-control">
+        </div>
+
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Restaurant</span>
+              <select class="form-select" aria-label="Default select example">
+                <option selected> - Select the restaurant - </option>
+                <option value="1">Equis</option>
+                <option value="2">Zeta</option>
+                <option value="3">Lambda</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Attendees</span>
+              <input type="number" class="form-control" min="1" max="6" placeholder="Max: 6">
+            </div>
+          </div>
+        </div>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-primary" type="submit" style="background-color: #0000ff; border: #0000ff;" >Book</button>
+        </div>
       </form>
     </div>
     <div class="card-body title">
