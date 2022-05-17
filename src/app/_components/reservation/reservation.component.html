@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="title">SCHEDULE A RESERVATION</h1>
+    </div>
+    <div class="card-body title">
+      <h3 class="card-title">Reservations</h3>
+      <div class="table-responsive">
+        <table class="table aling-middle">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Cabin</th>
+              <th scope="col">Date</th>
+              <th scope="col">Attendees</th>
+              <th scope="col">Restaurant</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let booking of bookings">
+              <td>{{booking.name}}</td>
+              <td>{{booking.cabin}}</td>
+              <td>{{booking.date}}</td>
+              <td>{{booking.attendees}}</td>
+              <td>{{booking.restaurant}}</td>
+              <td>
+                <i></i>
+              </td>
+              <td>
+                <i></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
