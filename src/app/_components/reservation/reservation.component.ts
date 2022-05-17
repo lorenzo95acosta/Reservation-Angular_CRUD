@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reservation',
@@ -15,13 +15,13 @@ export class ReservationComponent implements OnInit {
 
   constructor(private formB: FormBuilder) {
     this.form = this.formB.group({
-      name: [""],
-      cabin: [],
+      name: ["", Validators.required],
+      cabin: [,[Validators.required, Validators.maxLength(4)]],
       active: [true],
-      restaurant: [""],
-      date: [""],
-      hour: [""],
-      attendees: []
+      restaurant: ["",Validators.required],
+      date: ["",[Validators.required, Validators.maxLength(8), Validators.minLength(8)]],
+      hour: ["",[Validators.required, Validators.maxLength(5), Validators.minLength(5)]],
+      attendees: [,Validators.required]
     })
   }
 
@@ -40,6 +40,10 @@ export class ReservationComponent implements OnInit {
     }
     this.bookings.push(bookedTable);
     this.form.reset();
+  }
+
+  deleteReservation(index: number){
+    this.bookings.splice(index, 1)
   }
 
 }

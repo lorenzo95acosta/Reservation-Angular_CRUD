@@ -10,7 +10,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text">Cabin</span>
-          <input formControlName="cabin" type="number" class="form-control" placeholder="Ej: 1234">
+          <input formControlName="cabin" type="number" class="form-control" placeholder="Ej: 1234" min="1" max="9999">
         </div>
 
         <div class="input-group mb-3">
@@ -24,7 +24,7 @@
           <div class="col-lg-7">
             <div class="input-group mb-3">
               <span class="input-group-text">Restaurant</span>
-              <select  formControlName="restaurant" class="form-select" aria-label="Default select example">
+              <select  formControlName="restaurant" class="form-select">
                 <option selected> - Select the restaurant - </option>
                 <option value="Equis">Equis</option>
                 <option value="Zeta">Zeta</option>
@@ -35,7 +35,14 @@
           <div class="col-lg-5">
             <div class="input-group mb-3">
               <span class="input-group-text">Attendees</span>
-              <input formControlName="attendees" type="number" class="form-control" min="1" max="6" placeholder="Max: 6">
+              <select  formControlName="attendees" class="form-select">
+                <option  value=1>  1 </option>
+                <option value=2> 2 </option>
+                <option value=3> 3 </option>
+                <option value=4> 4 </option>
+                <option value=5> 5 </option>
+                <option value=6> 6 </option>
+              </select>
             </div>
           </div>
         </div>
@@ -63,7 +70,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let booking of bookings">
+              <tr *ngFor="let booking of bookings; let i = index">
                 <td>{{booking.name}}</td>
                 <td>{{booking.cabin}}</td>
                 <td>{{booking.date}}</td>
@@ -74,7 +81,7 @@
                   <i class="far fa-solid fa-file-pen" style="color: #0000cc;"></i>
                 </td>
                 <td>
-                  <i class="far fa-solid fa-trash" style="color: #b30000;"></i>
+                  <i (click)="deleteReservation(i);" class="far fa-solid fa-trash" style="color: #b30000;"></i>
                 </td>
               </tr>
             </tbody>
