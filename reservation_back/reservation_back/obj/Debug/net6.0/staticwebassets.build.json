@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "R2SYBN0LHEJ7Fhes74Poct2GZhCkMW0ocHX94CssPlM=",
+  "Source": "reservation_back",
+  "BasePath": "_content/reservation_back",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
