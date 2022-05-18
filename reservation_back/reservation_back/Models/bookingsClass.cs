@@ -9,7 +9,6 @@ namespace reservation_back.Models
     public string name { get; set; }
     [Required]
     public int cabin { get; set; }
-    
     public bool active { get; set; }
     [Required]
     public string restaurant { get; set; }

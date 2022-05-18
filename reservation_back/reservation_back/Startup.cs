@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
+
 namespace reservation_back
 {
-  public static class Startup
+  public class Startup
   {
+
     public static WebApplication InitializeApp(string[] args)
     {
       var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +24,8 @@ namespace reservation_back
       // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
       builder.Services.AddEndpointsApiExplorer();
       builder.Services.AddSwaggerGen();
+      builder.Services.AddDbContext<AplicationDbContext>(options =>
+        options.UseSqlServer(connectionString: "Server=localhost\\SQLEXPRESS;Database=reservationsDB;Trusted_Connection=True;"));
     }
 
     private static void Configure(WebApplication app)
